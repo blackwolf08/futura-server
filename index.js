@@ -36,6 +36,12 @@ app.get("/api/messages/", loginRequired, async function(req, res, next) {
   }
 });
 
+app.get("/", (req,res,next) => {
+  return res.status(200).json({
+    "status":"okay"
+  })
+})
+
 app.use(function(req, res, next) {
   let err = new Error("Not Found");
   err.status = 404;
